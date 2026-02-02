@@ -22,26 +22,7 @@ const userSchema = new mongoose.Schema({ //definindo o esquema do modelo de usu√
 });
 
 
-const contaSchema = new mongoose.Schema ({
-    id: {
-        type: int, 
-        required: true,
-        unique: true,   
-    },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true,
-    },
-    balance: {
-        type: Number,
-        required: true,
-        default: 0,
-    }
-})
-
 // criando o modelo de usu√°rio com base no esquema definido
 const UserModel = mongoose.model('User', userSchema);
-const ContaModel = mongoose.model ('Conta', contaSchema);
 
-module.exports = UserModel, ContaModel;
+module.exports = UserModel;
